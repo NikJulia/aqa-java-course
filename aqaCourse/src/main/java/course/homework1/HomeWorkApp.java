@@ -24,9 +24,9 @@ public class HomeWorkApp {
 
     public static void checkSumSign() {
         System.out.println("Нахождение суммы двух чисел");
-        System.out.println("Введите певрое число и нажмите Enter:");
+        System.out.print("Введите певрое число и нажмите Enter: ");
         int a = in.nextInt();
-        System.out.println("Введите второе число и нажмите Enter:");
+        System.out.print("Введите второе число и нажмите Enter: ");
         int b = in.nextInt();
 
         if (a + b >= 0) {
@@ -36,7 +36,7 @@ public class HomeWorkApp {
 
     public static void printColor() {
         System.out.println("Угадай цвет");
-        System.out.println("Введите любое целое число от 0 до 100 и нажмите Enter:");
+        System.out.print("Введите любое целое число от 0 до 100 и нажмите Enter: ");
         int value = in.nextInt();
 
         if (value <= 0) {
@@ -50,9 +50,9 @@ public class HomeWorkApp {
 
     public static void compareNumbers() {
         System.out.println("Сравнение чисел");
-        System.out.println("Введите певрое число и нажмите Enter:");
+        System.out.print("Введите певрое число и нажмите Enter: ");
         int a = in.nextInt();
-        System.out.println("Введите второе число и нажмите Enter:");
+        System.out.print("Введите второе число и нажмите Enter: ");
         int b = in.nextInt();
 
         if (a >= b) {
