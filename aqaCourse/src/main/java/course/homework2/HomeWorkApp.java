@@ -80,18 +80,6 @@ public class HomeWorkApp {
         return year;
     }
 
-    public static String textInput() {
-        System.out.println("Введите любой текст и нажмите Enter: ");
-        String text = in.next();
-        return text;
-    }
-
-    public static int numInput() {
-        System.out.println("Введите любое целое число и нажмите Enter: ");
-        int number = in.nextInt();
-        return number;
-    }
-
     /*
     5. Задать целочисленный массив, состоящий из элементов 0 и 1.
     Например: [ 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 ]. С помощью цикла и условия заменить 0 на 1, 1 на 0;
@@ -165,6 +153,19 @@ public class HomeWorkApp {
             array[i] = initialValue;
         }
         System.out.println("Новый массив: " + Arrays.toString(array));
+    }
+
+    //Методы ввода данных с клавиатуры и вывода их в консоль
+    public static String textInput() {
+        System.out.println("Введите любой текст и нажмите Enter: ");
+        String text = in.next();
+        return text;
+    }
+
+    public static int numInput() {
+        System.out.println("Введите любое целое число и нажмите Enter: ");
+        int number = in.nextInt();
+        return number;
     }
 
     /*
