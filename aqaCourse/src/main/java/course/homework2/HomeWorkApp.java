@@ -17,6 +17,7 @@ public class HomeWorkApp {
         updateArray();
         fillArrayDiagonal();
         createArray(numInput(), numInput());
+        getArrayWithShift(createNewArray(numInput()), numInput());
         in.close();
     }
 
@@ -175,5 +176,38 @@ public class HomeWorkApp {
      Примеры: [ 1, 2, 3 ] при n = 1 (на один вправо) -> [ 3, 1, 2 ]; [ 3, 5, 6, 1] при n = -2 (на два влево) -> [ 6, 1, 3, 5 ].
      При каком n в какую сторону сдвиг можете выбирать сами.
      */
+
+    /*
+    Метод для создания и наполнения массива целочисленными значениями size длины
+     */
+
+    public static int[] createNewArray(int size) {
+        int array[] = new int[size];
+        System.out.println("Введите " + size + " элементa(-ов) массива: ");
+        //Заполянем массив
+        for (int i = 0; i < size; i++) {
+            array[i] = in.nextInt();
+        }
+        System.out.println("Созданный массив: " + Arrays.toString(array));
+        return array;
+    }
+    public static void getArrayWithShift(int[] array, int shift) {
+        if (shift > 0) {
+            for (int i = 1; i <= shift; i++) {
+                for (int j = array.length - 2; j >= 0; j--) {
+                    array[j + 1] = array[j];
+                }
+                array[0] = array[array.length - 1];
+            }
+        } else if (shift < 0) {
+            for (int i = shift; i<= -1; i++) {
+                for (int j = 1; j < array.length; j++) {
+                    array[j - 1] = array[j];
+                }
+                array[array.length - 1] = array[0];
+            }
+        }
+        System.out.println("Массив со смещением " + shift + ": " + Arrays.toString(array));
+    }
 }
 
