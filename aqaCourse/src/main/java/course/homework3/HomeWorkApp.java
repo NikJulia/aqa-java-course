@@ -1,7 +1,5 @@
 package course.homework3;
 
-import java.util.Arrays;
-
 public class HomeWorkApp {
     public static void main(String[] args) {
         Employee[] employeesArray = new Employee[5];
