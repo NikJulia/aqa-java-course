@@ -20,10 +20,16 @@ package course.homework4;
 import java.util.Scanner;
 
 public class HomeWorkApp {
+
+    static int count = 0;
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         Cat cat = new Cat("Мурзик");
+        count++;
         Dog dog = new Dog("Бобик");
+        count++;
+
+        System.out.println("Всего животных: " + count);
 
         System.out.print("Введите дистанцию для кота (бег) в виде целого числа: ");
         cat.run(in.nextInt());
