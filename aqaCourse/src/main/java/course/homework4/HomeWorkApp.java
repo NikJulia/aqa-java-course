@@ -20,25 +20,50 @@ package course.homework4;
 import java.util.Scanner;
 
 public class HomeWorkApp {
-
-    static int count = 0;
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        Cat cat = new Cat("Мурзик");
-        count++;
+        int count = 0;
+        int action;
+
+        Cat[] Cats = new Cat[3];
+        Cats[0] = new Cat("Мурзик", 10);
+        Cats[1] = new Cat("Барсик", 5);
+        Cats[2] = new Cat("Пушок", 30);
+        count += Cats.length;
+
+        Plate plate = new Plate(12);
+
         Dog dog = new Dog("Бобик");
         count++;
 
         System.out.println("Всего животных: " + count);
 
-        System.out.print("Введите дистанцию для кота (бег) в виде целого числа: ");
-        cat.run(in.nextInt());
-        System.out.print("Введите дистанцию для кота (плавание) в виде целого числа: ");
-        cat.swim(in.nextInt());
+        for (int i = 0; i < Cats.length; i++) {
+            System.out.print("Введите дистанцию для кота под именем " + Cats[i].name + " (бег) в виде целого числа: ");
+            Cats[i].run(in.nextInt());
+            System.out.print("Введите дистанцию для кота под именем " + Cats[i].name + " (плавание) в виде целого числа: ");
+            Cats[i].swim(in.nextInt());
+        }
 
-        System.out.print("Введите дистанцию для собаки (бег) в виде целого числа: ");
+        System.out.print("Введите дистанцию для собаки под именем " + dog.name + " (бег) в виде целого числа: ");
         dog.run(in.nextInt());
-        System.out.print("Введите дистанцию для собаки (плавание) в виде целого числа: ");
+        System.out.print("Введите дистанцию для собаки под именем " + dog.name + " (плавание) в виде целого числа: ");
         dog.swim(in.nextInt());
+
+        plate.info();
+        for (int i = 0; i < Cats.length; i++) {
+            if (Cats[i].satiety == false && Cats[i].appetite < plate.food){
+                Cats[i].eat(plate);
+                Cats[i].satiety = true;
+                System.out.println(Cats[i].name + " покушал.");
+            } else {
+                System.out.println(Cats[i].name + " не поел.");
+            }
+        }
+        plate.info();
+        System.out.print("Сколько еды добавить в тарелку? ");
+        action = in.nextInt();
+        plate.increaseFood(action);
+        plate.info();
     }
 }
